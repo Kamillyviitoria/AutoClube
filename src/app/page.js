@@ -37,6 +37,16 @@ export default function Home() {
               <span>MARKETPLACE</span>
             </div>
           </Link>
+          <Link href="/produtos" className="footerLink">
+            <div className="iconContainer">
+              <span>PRODUTOS</span>
+            </div>
+          </Link>
+          <Link href="/car  " className="footerLink">
+            <div className="iconContainer">
+              <span>MONTE O SEU</span>
+            </div>
+          </Link>
         
       </div>
 

@@ -5,14 +5,15 @@ import { Container, Row, Col, Card, Button, Modal, Carousel } from 'react-bootst
 import { useRouter } from 'next/navigation';
 import Header from '../components/Header/Header';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+import Footer from '../components/Footer/Footer';
 
 
 const eventoslocais = [
     { id: 1, title: "Carbon Meet", date: "Sáb, 02 Nov 2024", time: "01:00", location: "Rua José Francisco Correia", image: "/imagens/carbon-meet.jpg", description: "Um encontro de entusiastas do carbono." },      
-    { id: 2, title: "Overdrive - Encontro de Halloween", date: "Sex, 08 Nov 2024", time: "00:00", location: "Avenida Babita Camargos, 1295", image: "/imagens/imagem2.jpg", description: "Uma festa temática de Halloween." },
-    { id: 3, title: "Expoauto", date: "Dom, 10 Nov 2024", time: "20:59", location: "Avenida Independência", image: "/imagens/imagem3.jpg", description: "Uma exposição de automóveis que vai apresentar as últimas novidades do setor." },
+    { id: 2, title: "Dia de Pista", date: "Sex, 27 Nov 2024", time: "20:00", location: "Avenida Babita Camargos, 1295", image: "/imagens/rodas.jpg", description: "Exclusiva para membros." },
+    { id: 3, title: "Garagem 13", date: "Dom, 30 Nov 2024", time: "20:59", location: "Avenida Independência", image: "/imagens/garagem.jpg", description: "Uma exposição de automóveis que vai apresentar as últimas novidades do setor." },
     { id: 4, title: "DRIFT PALMAS", date: "Sáb, 23 Nov 2024", time: "22:00", location: "Quadra 1504 Sul Al 29", image: "/imagens/imagem4.jpg", description: "Uma competição de drift com participação de pilotos renomados." },
-    { id: 5, title: "CIRCUITO MEIDERUA", date: "Dom, 24 Nov 2024", time: "18:00", location: "Setor Placa das Mercedes Conjunt...", image: "/imagens/imagem5.jpg", description: "Um circuito de competições, com várias modalidades e prêmios." }
+    { id: 5, title: "CIRCUITO MEIDERUA", date: "Dom, 24 Nov 2024", time: "18:00", location: "Setor Placa das Mercedes Conjunt...", image: "/imagens/diadepista.jpg", description: "Um circuito de competições, com várias modalidades e prêmios." }
 ];
 
 const styles = {
@@ -210,6 +211,8 @@ const EventListPage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
+            <Footer></Footer>
         </>
     );
 };

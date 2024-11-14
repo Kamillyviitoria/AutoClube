@@ -104,7 +104,7 @@ export default function Page({ params }) {
 
   const handlePriceChange = (event) => {
     const value = event.target.value;
-    const maskedValue = mask(value, 'R$ 999.999,99'); // Máscara de preço
+    const maskedValue = mask(value, 'R$ 999.999,99'); 
     setValue('price', maskedValue);
   };
 
@@ -115,25 +115,25 @@ export default function Page({ params }) {
         style={{
           position: 'relative',
           width: '100%',
-          height: 'auto', // Ajuste da altura para garantir que o conteúdo fique dentro da tela
-          backgroundImage: "url('/imagens/bugatti.jpg')", // Ajuste o caminho da imagem
+          height: 'auto', 
+          backgroundImage: "url('/imagens/bugatti.jpg')", 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '100vh' // Garante que o fundo cubra toda a altura da tela
+          minHeight: '100vh' 
         }}
       >
         <Container
           style={{
-            backgroundColor: 'rgba(64, 64, 64, 0.9)', // Cinza escuro com opacidade
+            backgroundColor: 'rgba(64, 64, 64, 0.9)', 
             padding: '20px',
             borderRadius: '8px',
             maxWidth: '600px',
             width: '100%',
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
-            zIndex: 1, // Garante que o conteúdo fique acima do fundo
+            zIndex: 1, 
           }}
         >
           <div className='d-flex justify-content-center align-items-center my-3 texto-custom'>
@@ -166,7 +166,7 @@ export default function Page({ params }) {
                       id="price"
                       name="price"
                       {...register("price")}
-                      onChange={handlePriceChange} // Aplica a máscara ao alterar o campo
+                      onChange={handlePriceChange} 
                       autoComplete="off"
                     />
                   {errors.price && <p className="text-danger">{errors.price.message}</p>}

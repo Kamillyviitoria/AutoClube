@@ -6,7 +6,7 @@ const MarketplaceValidator = Yup.object().shape({
     .max(100, 'O nome não pode ter mais de 100 caracteres')
     .required('O nome do marketplace é obrigatório'),
 
-    price: Yup.number()
+    price: Yup.string()
     .typeError('Preço deve ser um número válido')
     .min(0, 'O preço deve ser maior ou igual a 0')
     .required('O preço é obrigatório'),

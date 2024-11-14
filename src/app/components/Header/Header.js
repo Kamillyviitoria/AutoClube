@@ -18,8 +18,9 @@ function Header() {
           <Nav.Link href="/lojas">Lojas</Nav.Link>
           <Nav.Link href="/clubes">Clubes</Nav.Link>
           <Nav.Link href="/marketplace">Marketplace</Nav.Link>
+          <Nav.Link href="/produtos">Produtos</Nav.Link>
           <Nav.Link href="/car">Personalize Seu Carro</Nav.Link>
-          <Nav.Link href="/car">Produtos</Nav.Link>
+          
 
           
         </Nav>

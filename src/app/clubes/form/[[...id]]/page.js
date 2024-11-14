@@ -31,11 +31,7 @@ export default function Page({ params }) {
   }, [id, reset]);
 
   const salvar = (dados) => {
-    const requiredError = validateRequiredFields(dados);
-    if (requiredError) {
-      alert(requiredError);
-      return;
-    }
+      
 
     if (clube.id) {
       const index = clubes.findIndex(item => item.id === clube.id);
@@ -76,7 +72,7 @@ export default function Page({ params }) {
           position: 'relative',
           width: '100%',
           height: '100vh',
-          backgroundImage: "url('/imagens/bugatti.jpg')", // Ajuste o caminho da imagem
+          backgroundImage: "url('/imagens/bugatti.jpg')", 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
@@ -86,7 +82,7 @@ export default function Page({ params }) {
       >
         <Container
           style={{
-            backgroundColor: 'rgba(64, 64, 64, 0.9)', // Cinza escuro com opacidade
+            backgroundColor: 'rgba(64, 64, 64, 0.9)', 
             padding: '20px',
             borderRadius: '8px',
             maxWidth: '600px',

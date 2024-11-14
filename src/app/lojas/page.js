@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Button, Modal, Carousel } from 'react-bootst
 import { useRouter } from 'next/navigation';
 import Header from '../components/Header/Header';
 import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import Footer from '../components/Footer/Footer';
 
 const lojasLocais = [
     { id: '1', title: 'MOTOR TECH', services: 'Peças e novas e usadas, retífica de motores, centro automotivo.', phone: '(61) 3355-1493', address: 'Taguatinga - Distrito Federal', CEP: '72130-720', image: '/imagens/motortech.png' },
@@ -92,7 +93,6 @@ const StoreListPage = () => {
     return (
         <>
             <Header />
-               {/* Carrossel de Imagens */}
                <Row className="mb-5">
                     <Col>
                         <Carousel>
@@ -197,6 +197,8 @@ const StoreListPage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Footer />
+
         </>
     );
 };

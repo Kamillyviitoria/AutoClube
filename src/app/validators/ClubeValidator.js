@@ -11,7 +11,7 @@ const ClubeValidator = Yup.object().shape({
     .matches(/^\(\d{2}\) \d{5}-\d{4}$/, 'O telefone deve estar no formato (XX) XXXXX-XXXX'),
   image: Yup.mixed()
     .required('A imagem é obrigatória')
-    .test('fileSize', 'A imagem não pode ser maior que 2MB', value => !value || value.size <= 2 * 1024 * 1024), // Limite de 2MB
+    .test('fileSize', 'A imagem não pode ser maior que 5MB', value => !value || value.size <= 2 * 1024 * 1024), // Limite de 2MB
 });
 
 export default ClubeValidator;

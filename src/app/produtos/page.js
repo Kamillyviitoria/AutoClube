@@ -5,14 +5,15 @@ import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
 import { FaTruck, FaCreditCard, FaShieldAlt } from 'react-icons/fa';
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 const produtos = [
     { id: 1, name: "Boné preto com logo vermelho", price: 50, image: "/imagens/bonebranco.jpg" },
     { id: 2, name: "Camisa Marea", price: 60, image: "/imagens/camisa1.jpg" },
     { id: 3, name: "Copo vermelho | Edição Drift Tokyo 2023", price: 10, image: "/imagens/copopreto.jpg" },
-    { id: 4, name: "Boné vermelho com logo preto", price: 50, image: "/imagens/bone-vermelho.jpg" },
-    { id: 5, name: "Copo preto | Edição Drift Tokyo 2023", price: 10, image: "/imagens/copopreto.jpg" },
-    { id: 6, name: "Boné rosa com logo branco", price: 50, image: "/imagens/bone-osa.jpg" },
+    { id: 4, name: "Camisa - Edição Drift Tokyo", price: 60, image: "/imagens/camisa2.jpg" },
+    { id: 5, name: "Copo preto | Edição Drift Tokyo 2023", price: 10, image: "/imagens/copovermelho.jpg" },
+    { id: 6, name: "Boné rosa com logo branco", price: 50, image: "/imagens/bonerosa.jpg" },
 ];
 
 const Loja = () => {
@@ -20,13 +21,11 @@ const Loja = () => {
     const [carrinho, setCarrinho] = useState([]);
 
     useEffect(() => {
-        // Carrega o carrinho do Local Storage, se existir
         const carrinhoStorage = JSON.parse(localStorage.getItem('carrinho')) || [];
         setCarrinho(carrinhoStorage);
     }, []);
 
     useEffect(() => {
-        // Salva o carrinho no Local Storage sempre que ele for atualizado
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
     }, [carrinho]);
 
@@ -40,7 +39,7 @@ const Loja = () => {
     };
 
     const handleSaibaMais = () => {
-        router.push('/checkout'); // Página de informações, altere conforme necessário
+        router.push('/checkout'); 
     };
 
     return (
@@ -106,7 +105,6 @@ const Loja = () => {
                 </Button>
                 </Row>
 
-                {/* Seção de Produtos */}
                 <h1 className="text-center mt-5">Produtos em destaque</h1>
                 <Row>
                     {produtos.map((produto) => (
@@ -135,6 +133,7 @@ const Loja = () => {
                 </Row>
             
             </Container>
+            <Footer />
         </>
     );
 };

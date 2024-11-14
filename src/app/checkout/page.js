@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, ListGroup } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 const Checkout = () => {
     const router = useRouter();
@@ -88,6 +89,8 @@ const Checkout = () => {
                     </>
                 )}
             </Container>
+            <Footer />
+
         </>
     );
 };

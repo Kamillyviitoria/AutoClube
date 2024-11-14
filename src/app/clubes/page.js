@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Button, Modal, Carousel } from 'react-bootst
 import { useRouter } from 'next/navigation';
 import Header from '../components/Header/Header';
 import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import Footer from '../components/Footer/Footer';
 
 const clubesLocais = [
     { id: '1', title: 'Zero500Club Cars', phone: '(61) 9876-5432', address: 'Ceilândia - Distrito Federal', image: '/imagens.clubes/zaro500.jpg' },
@@ -31,9 +32,6 @@ const clubesLocais = [
 
    
 ];
-
-
-
 
 const styles = {
     cardCustom: {
@@ -202,6 +200,8 @@ const StoreListPage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Footer />
+
         </>
     );
 };

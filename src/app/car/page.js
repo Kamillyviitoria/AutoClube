@@ -25,42 +25,34 @@ const Page = () => {
   const [zoom, setZoom] = useState(1);
   const [modelUrl, setModelUrl] = useState('/models/car.glb');
 
-  // Referência para a câmera
   const cameraRef = useRef();
 
-  // Função para capturar e fazer o download da imagem
   const captureAndDownloadImage = () => {
     const scene = cameraRef.current ? cameraRef.current.parent : null;
     if (!scene) return;
 
-    // Criando um renderer de alta resolução
     const renderer = new THREE.WebGLRenderer();
     const width = window.innerWidth * 2;
     const height = window.innerHeight * 2;
 
     renderer.setSize(width, height);
 
-    // Corrige a proporção da câmera para manter o aspecto do modelo
     const aspect = width / height;
     cameraRef.current.aspect = aspect;
     cameraRef.current.updateProjectionMatrix();
 
-    // Remover o fundo da cena (se necessário)
     renderer.setClearColor(0x000000, 0); 
     
-    // Renderizando a cena com a câmera ajustada
     renderer.render(scene, cameraRef.current);
 
     const image = renderer.domElement.toDataURL('image/png');
 
-    // Criando um link para download da imagem
     const link = document.createElement('a');
     link.href = image;
     link.download = 'car-image.png';
     link.click();
   };
 
-  // Função para mudar o modelo e resetar as cores
   const changeCarModel = (modelName) => {
     setModelUrl(`/models/${modelName}.glb`);
     setBodyColor(initialColors.body);
@@ -76,7 +68,6 @@ const Page = () => {
       <main style={{ flex: 1, padding: '20px', textAlign: 'center' }}>
         <h1>Personalize seu Carro</h1>
 
-        {/* Renderiza o modelo GLB */}
         <CarModelViewer
           modelUrl={modelUrl}
           alt="Car"
@@ -91,7 +82,6 @@ const Page = () => {
           cameraRef={cameraRef}
         />
 
-        {/* Botões para mudar o modelo */}
         <div style={{ marginTop: '20px' }}>
           <button onClick={() => changeCarModel('car')} style={{ padding: '10px 20px', marginRight: '10px' }}>
             Modelo 1
@@ -107,7 +97,6 @@ const Page = () => {
           </button>
         </div>
 
-        {/* Seletor de cores */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
           <ColorPicker
             label="Carroceria"
@@ -145,17 +134,17 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Botão para capturar a imagem */}
         <button
           onClick={captureAndDownloadImage}
           style={{ marginTop: '20px', padding: '10px 20px' }}
         >
-          Baixar Imagem do Carro
+          Baixar Imagem!
         </button>
       </main>
-
       <Footer />
     </div>
+    
+    
   );
 };
 

@@ -6,15 +6,8 @@ import { useRouter } from 'next/navigation';
 import Header from '../components/Header/Header';
 import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { Radar } from 'react-chartjs-2';
-import {
-    Chart as ChartJS,
-    RadialLinearScale,
-    PointElement,
-    LineElement,
-    Filler,
-    Tooltip,
-    Legend
-} from 'chart.js';
+import { Chart as ChartJS, RadialLinearScale,PointElement,LineElement,Filler,Tooltip,Legend} from 'chart.js';
+import Footer from '../components/Footer/Footer';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -111,7 +104,7 @@ const StoreListPage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/imagens/produtos.jpg"
+                                    src="/imagens/2.jpg"
                                     alt="Imagem 1"
                                     style={{ height: '400px', objectFit: 'cover' }}
                                 />
@@ -119,7 +112,7 @@ const StoreListPage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/imagens/produtos.jpg"
+                                    src="/imagens/2.jpg"
                                     alt="Imagem 2"
                                     style={{ height: '400px', objectFit: 'cover' }}
                                 />
@@ -127,7 +120,7 @@ const StoreListPage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/imagens/produtos.jpg"
+                                    src="/imagens/2.jpg"
                                     alt="Imagem 3"
                                     style={{ height: '400px', objectFit: 'cover' }}
                                 />
@@ -156,7 +149,7 @@ const StoreListPage = () => {
                                     <Card.Text>
                                         <FaPhoneAlt /> {item.phone} <br />
                                         <FaMapMarkerAlt /> {item.address} <br />
-                                        <i class="bi bi-tag-Filler">{item.price}</i>
+                                        <i className="bi bi-tag-Filler">{item.price}</i>
                                     </Card.Text>
                                     <div className="d-flex justify-content-between">
                                         <Button variant="danger" onClick={() => excluir(item.id)}>Excluir</Button>
@@ -241,6 +234,7 @@ const StoreListPage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Footer /> 
         </>
     );
 };
